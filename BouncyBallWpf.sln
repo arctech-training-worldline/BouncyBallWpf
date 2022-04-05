@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BouncyBallWpf", "BouncyBall\BouncyBallWpf.csproj", "{FB034C4C-6F1F-4C15-8C95-F5038CB759A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB034C4C-6F1F-4C15-8C95-F5038CB759A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB034C4C-6F1F-4C15-8C95-F5038CB759A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB034C4C-6F1F-4C15-8C95-F5038CB759A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB034C4C-6F1F-4C15-8C95-F5038CB759A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E60BB66-AD24-4B5B-94F7-2EF9F1DCB270}
+	EndGlobalSection
+EndGlobal
