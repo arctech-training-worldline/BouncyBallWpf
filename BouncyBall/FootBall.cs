@@ -22,20 +22,27 @@ namespace BouncyBall
         {
             _window = window;
             _canvas = canvas;
-            _image = CreatePictureBoxWithFootBallImage();            
+            _image = CreatePictureBoxWithFootBallImage();
         }
 
         public void Bounce()
         {
-            _thread = new Thread(WorkerThreadBounceBall);
+            if (_thread == null)
+            {
+                _thread = new Thread(WorkerThreadBounceBall);
 
-            _cts = new CancellationTokenSource();
-            _thread.Start(_cts.Token);
+                _cts = new CancellationTokenSource();
+                _thread.Start(_cts.Token);
+            }
         }
 
         internal void StopBounce()
         {
-            _cts.CancelAfter(10);
+            if (_thread != null)
+            {
+                _cts.CancelAfter(10);
+                _thread = null;
+            }
         }
 
         private void WorkerThreadBounceBall(object obj)
@@ -53,7 +60,7 @@ namespace BouncyBall
 
             do
             {
-                if(cancellationToken.IsCancellationRequested)
+                if (cancellationToken.IsCancellationRequested)
                     break;
 
                 position.X += xFactor;
@@ -94,7 +101,7 @@ namespace BouncyBall
             var imageFootBall = new Image
             {
                 Source = new BitmapImage(new Uri(@"pack://application:,,,/images/football.jpg")),
-                Stretch =  System.Windows.Media.Stretch.Fill,
+                Stretch = System.Windows.Media.Stretch.Fill,
             };
 
             Canvas.SetLeft(imageFootBall, 100);
@@ -104,5 +111,5 @@ namespace BouncyBall
 
             return imageFootBall;
         }
-}
+    }
 }
